@@ -1,0 +1,622 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<title>BestBefore Home</title>
+	
+	<meta charset="utf-8"/>
+	<link rel="stylesheet" type="text/css" href="css/master.css">
+	<link rel="stylesheet" type="text/css" href="css/navigation.css">
+	<link rel="stylesheet" type="text/css" href="css/footer.css">
+	
+	<link rel="stylesheet" type="text/css" href="css/popup.css">
+
+	<style>
+	
+	.contents{
+		height:auto;
+		overflow: hidden;
+	}
+	
+	p {margin-top:1px;margin-bottom:1px;}
+	
+	#nav{
+		font-size:2em;
+		text-align:center;
+	}
+	
+	.itemframebox{
+		height:100%;
+		overflow: hidden;
+	}
+	
+	.itemframe{
+		float:left;
+		display:inline-block;
+		margin-left:2.5%;
+		margin-right:2.5%;
+		margin-top:2.5%;
+		margin-bottom:2.5%;
+		width:200px;
+		height:auto;
+		background-color:GRAY;
+	}
+	
+	.itemframetext{
+		width:70%;
+		height:auto;
+		overflow: hidden;
+		float:left;
+	}
+	
+	.itemframecost{
+		width:30%;
+		height:auto;
+		overflow: hidden;
+		float:right;
+	}
+	
+	/* popup divs */
+	.popup_name {
+		margin: 0%;
+		padding: 0%;
+		margin-top: 3%;
+		float: right;
+		width: 100%;
+		font-size: 20pt;
+		text-align:left;
+	}
+	.popup_cost {
+		margin: 0%;
+		padding: 0%;
+		margin-top: 5%;
+		float: left;
+		width: 50%;
+	}
+	.popup_desc {
+		margin: 0%;
+		padding: 0%;
+		margin-top: 5%;
+		float: left;
+		width: 100%;
+		height: 80%
+		overflow-y: auto;
+	}
+	</style>
+</head>
+
+<body>
+	<div id="header-bar">
+		<img alt="Image Not Found" src="img/master/logo.png" height="50" style="margin:7.5px; float:left;"/>
+	</div>	
+	<div class="contents">
+		<nav>
+			<ul id="nav">
+				<li class="li">
+					<a href="index.html">Home</a>
+				</li>
+				|
+				<li class="li">
+					<a href="shipping/index.html">Shipping</a>
+				</li>
+				|
+				<li class="li">
+					<a href="help/index.html">Help</a>
+				</li>
+				|
+				<li class="li">
+					<a href="basket/index.html">Basket</a>
+				</li>
+			</ul>
+		</nav>
+		
+		<div class="itemframebox">
+			<p style="font-size:15pt;">Click on an image for more information.</p>
+
+			<hr/>
+
+			<div class="itemframe">
+				<img alt="Image Not Found" src="img/home/bike1.jpg" width="100%" height = "100%" onclick="openInfo('bike1'); document.getElementById('lightWrapper').style.display='block';document.getElementById('fade').style.display='block'"/>
+				<div class="itemframetext">
+					<p>Scott Speedster S30</p>
+				</div>
+				<div class="itemframecost">
+					<p style="text-align:right;">£949</p>
+				</div>
+			</div>
+		
+			<div class="itemframe">
+				<img alt="Image Not Found" src="img/home/bike2.jpg" width="100%" height = "100%" onclick="openInfo('bike2'); document.getElementById('lightWrapper').style.display='block';document.getElementById('fade').style.display='block'"/>
+				<div class="itemframetext">
+					<p>Boardman T.Carbon</p>
+				</div>
+				<div class="itemframecost">
+					<p style="text-align:right;">£760</p>
+				</div>
+			</div>
+			
+			<div class="itemframe">
+				<img alt="Image Not Found" src="img/home/bike3.jpg" width="100%" height = "100%" onclick="openInfo('bike3'); document.getElementById('lightWrapper').style.display='block';document.getElementById('fade').style.display='block'"/>
+				<div class="itemframetext">
+					<p>Genesis Equilibrium</p>
+				</div>
+				<div class="itemframecost">
+					<p style="text-align:right;">£999</p>
+				</div>
+			</div>
+		</div>
+		
+		<hr/>
+		
+		<div class="itemframebox">
+			<div class="itemframe">
+				<img alt="Image Not Found" src="img/home/boat1.jpg" width="100%" height = "100%"  onclick="openInfo('boat1'); document.getElementById('lightWrapper').style.display='block';document.getElementById('fade').style.display='block'"/>
+				<div class="itemframetext">
+					<p>Carolina II</p>
+				</div>
+				<div class="itemframecost">
+					<p style="text-align:right;">£25,995</p>
+				</div>
+			</div>
+			
+			<div class="itemframe">
+				<img alt="Image Not Found" src="img/home/boat2.jpg" width="100%" height = "100%" onclick="openInfo('boat2'); document.getElementById('lightWrapper').style.display='block';document.getElementById('fade').style.display='block'"/>
+				<div class="itemframetext">
+					<p>Glaston Wayfarer</p>
+				</div>
+				<div class="itemframecost">
+					<p style="text-align:right;">£43,000</p>
+				</div>
+			</div>
+			
+			<div class="itemframe">
+				<img alt="Image Not Found" src="img/home/boat3.jpg" width="100%" height = "100%" onclick="openInfo('boat3'); document.getElementById('lightWrapper').style.display='block';document.getElementById('fade').style.display='block'"/>
+				<div class="itemframetext">
+					<p>West Wight Potter</p>
+				</div>
+				<div class="itemframecost">
+					<p style="text-align:right;">£83,000</p>
+				</div>
+			</div>
+			
+			<div class="itemframe">
+				<img alt="Image Not Found" src="img/home/boat4.jpg" width="100%" height = "100%" onclick="openInfo('boat4'); document.getElementById('lightWrapper').style.display='block';document.getElementById('fade').style.display='block'"/>
+				<div class="itemframetext">
+					<p>Roxane Super Yacht</p>
+				</div>
+				<div class="itemframecost">
+					<p style="text-align:right;">£7.8 mil</p>
+				</div>
+			</div>
+		</div>
+
+		<hr/>
+		
+		<div class="itemframebox">
+			<div class="itemframe">
+				<img alt="Image Not Found" src="img/home/moto1.jpg" width="100%" height = "100%" onclick="openInfo('moto1'); document.getElementById('lightWrapper').style.display='block';document.getElementById('fade').style.display='block'"/>
+				<div class="itemframetext">
+					<p>Sportster Iron 883</p>
+				</div>
+				<div class="itemframecost">
+					<p style="text-align:right;">£7,795</p>
+				</div>
+			</div>
+		
+			<div class="itemframe">
+				<img alt="Image Not Found" src="img/home/moto2.jpg" width="100%" height = "100%" onclick="openInfo('moto2'); document.getElementById('lightWrapper').style.display='block';document.getElementById('fade').style.display='block'"/>
+				<div class="itemframetext">
+					<p>Suzuki Hayabusa</p>
+				</div>
+				<div class="itemframecost">
+					<p style="text-align:right;">£12,499</p>
+				</div>
+			</div>
+		
+			<div class="itemframe">
+				<img alt="Image Not Found" src="img/home/moto3.jpg" width="100%" height = "100%" onclick="openInfo('moto3'); document.getElementById('lightWrapper').style.display='block';document.getElementById('fade').style.display='block'"/>
+				<div class="itemframetext">
+					<p>Yamaha YZ250F</p>
+				</div>
+				<div class="itemframecost">
+					<p style="text-align:right;">£7,699</p>
+				</div>
+			</div>
+		
+			<div class="itemframe">
+				<img alt="Image Not Found" src="img/home/moto4.jpg" width="100%" height = "100%" onclick="openInfo('moto4'); document.getElementById('lightWrapper').style.display='block';document.getElementById('fade').style.display='block'"/>
+				<div class="itemframetext">
+					<p>Dodge Tomohawk</p>
+				</div>
+				<div class="itemframecost">
+					<p style="text-align:right;">£11,442</p>
+				</div>
+			</div>
+		
+			<div class="itemframe">
+				<img alt="Image Not Found" src="img/home/moto5.jpg" width="100%" height = "100%" onclick="openInfo('moto5'); document.getElementById('lightWrapper').style.display='block';document.getElementById('fade').style.display='block'"/>
+				<div class="itemframetext">
+					<p>Peugeot Metropolis</p>
+				</div>
+				<div class="itemframecost">
+					<p style="text-align:right;">£7,299</p>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	<br>
+<!-- This is the footer of the page -->
+	<footer>
+		<div class="contents">
+			<div id="footercontainer">
+				<div class="footerrow">
+					<ul>
+						<li class="li"><img alt="Image Not Found" src="img/master/fb-art.png" width="35" height="35" class="footericons"/></li>
+						<li class="li"><img alt="Image Not Found" src="img/master/tw-art.png" width="35" height="35" class="footericons"/></li>
+						<li class="li"><img alt="Image Not Found" src="img/master/bebo-art.png" width="35" height="35" class="footericons"/></li>
+						<li class="li"><img alt="Image Not Found" src="img/master/pin-art.png" width="35" height="35" class="footericons"/></li>
+						<li class="li"><img alt="Image Not Found" src="img/master/inst-art.png" width="35" height="35" class="footericons"/></li>
+					</ul>
+				</div>
+				<div class="footerrow">
+					<ul>
+						<li class="footer-nav"><a href="index.html" style="text-decoration:none;">Home</a></li>
+						<li class="footer-nav"><a href="shipping/index.html" style="text-decoration:none;">Shipping</a></li>
+						<li class="footer-nav"><a href="help/index.html" style="text-decoration:none;">Help</a></li>
+						<li class="footer-nav"><a href="basket/index.html" style="text-decoration:none;">Basket</a></li>
+					</ul>
+				</div>
+				<div class="footerrow">
+					<p style="font-size:0.85em;">©2016 The BestBefore, BestBefore Inc.</p>
+				</div>
+			</div>
+		</div>
+	</footer>
+	
+<!-- This is the popup section -->
+	<div id="lightWrapper" class="white_content">
+		<div style="popupheaderbar">
+			<img alt="Image Not Found" src="img/home/close.png" width="5%" style="margin:7.5px;float:right;" onclick="document.getElementById('lightWrapper').style.display='none'; document.getElementById('fade').style.display='none'"/>
+		</div>
+		<div id="popupwrapper">
+			<div id="popupleftbanner">
+				<img alt="Image Not Found" id="popupimage" width="95%" height="60%" style="margin:7.5px;" src="img/home/default.jpg"/>
+				<div id="slideshow" style="position:relative;top:-60px;z-index:3;">
+					<img alt="Image Not Found" id="popupslideshowchange1" width="10%" style="margin:2.5%;margin-left:2.5%;"  src="img/home/default.jpg" onclick="slideshowchange('1')"/>
+					<img alt="Image Not Found" id="popupslideshowchange2" width="10%" style="margin:2.5%;position:relative;" src="img/home/default.jpg" onclick="slideshowchange('2')"/>
+					<img alt="Image Not Found" id="popupslideshowchange3" width="10%" style="margin:2.5%;position:relative;" src="img/home/default.jpg" onclick="slideshowchange('3')"/>
+					<img alt="Image Not Found" id="popupslideshowchange4" width="10%" style="margin:2.5%;position:relative;" src="img/home/default.jpg" onclick="slideshowchange('4')"/>
+					<img alt="Image Not Found" id="popupslideshowchange5" width="10%" style="margin:2.5%;position:relative;" src="img/home/default.jpg" onclick="slideshowchange('5')"/>
+					<img alt="Image Not Found" id="popupslideshowchange6" width="10%" style="margin:2.5%;margin-right:2.5%;" src="img/home/default.jpg" onclick="slideshowchange('6')"/>
+				</div>
+				<img alt="Image Not Found" id="addtocart" onclick="addToCart()" width="95%" style="margin:7.5px;" src="img/home/addbasketbutton.png"/> <!-- Find a way to position the images just below the popupimage -->
+			</div>
+			<div id="popuprightbanner">
+				<p id="popupname" class="popup_name">[insert name here]</p>
+				<p id="popupcost" class="popup_cost">[insert cost here]</p>
+				<select id="popup_customise">
+					<option value="Default">Default</option>
+					<option value="Blue">Blue</option>
+					<option value="Red">Red</option>
+					<option value="Black">Black</option>
+				</select>
+				<p id="popupdesc" class="popup_desc">[insert desc here]</p>
+			</div>
+		</div>
+	</div>
+	<div id="fade" class="black_overlay" onclick="document.getElementById('lightWrapper').style.display='none'; document.getElementById('fade').style.display='none'"></div>
+
+	<script>
+	var popupid = "-";
+	var slideshowid = "-";
+	
+	//Add in each of the links here for the object images
+	var bike1 = [
+		"img/home/bike1.jpg",
+		"img/home/bike1/bike1-sl1.jpg",
+		"img/home/bike1/bike1-sl2.jpg",
+		"img/home/bike1/bike1-sl3.jpg",
+		"img/home/bike1/bike1-sl4.jpg",
+		"img/home/bike1/bike1-sl5.jpg",
+	];
+	var bike2 = [
+		"img/home/bike2.jpg",
+		"img/home/bike2/bike2-sl1.jpg",
+		"img/home/bike2/bike2-sl2.jpg",
+		"img/home/bike2/bike2-sl3.jpg",
+		"img/home/bike2/bike2-sl4.jpg",
+		"img/home/bike2/bike2-sl5.jpg",
+	];
+	var bike3 = [
+		"img/home/bike3.jpg",
+		"img/home/bike3/bike3-sl1.jpg",
+		"img/home/bike3/bike3-sl2.jpg",
+		"img/home/bike3/bike3-sl3.jpg",
+		"img/home/bike3/bike3-sl4.jpg",
+		"img/home/bike3/bike3-sl5.jpg",
+	];
+	var boat1 = [
+		"img/home/boat1.jpg",
+		"img/home/boat1/boat1-sl1.jpg",
+		"img/home/boat1/boat1-sl2.jpg",
+		"img/home/boat1/boat1-sl3.jpg",
+		"img/home/boat1/boat1-sl4.jpg",
+		"img/home/boat1/boat1-sl5.jpg",
+	];
+	var boat2 = [
+		"img/home/boat2.jpg",
+		"img/home/boat2/boat2-sl1.jpg",
+		"img/home/boat2/boat2-sl2.jpg",
+		"img/home/boat2/boat2-sl3.jpg",
+		"img/home/boat2/boat2-sl4.jpg",
+		"img/home/boat2/boat2-sl5.jpg",
+	];
+	var boat3 = [
+		"img/home/boat3.jpg",
+		"img/home/boat3/boat3-sl1.jpg",
+		"img/home/boat3/boat3-sl2.jpg",
+		"img/home/boat3/boat3-sl3.jpg",
+		"img/home/boat3/boat3-sl4.jpg",
+		"img/home/boat3/boat3-sl5.jpg",
+	];
+	var boat4 = [
+		"img/home/boat4.jpg",
+		"img/home/boat4/boat4-sl1.jpg",
+		"img/home/boat4/boat4-sl2.jpg",
+		"img/home/boat4/boat4-sl3.jpg",
+		"img/home/boat4/boat4-sl4.jpg",
+		"img/home/boat4/boat4-sl5.jpg",
+	];
+	var moto1 = [
+		"img/home/moto1.jpg",
+		"img/home/moto1/moto1-sl1.jpg",
+		"img/home/moto1/moto1-sl2.jpg",
+		"img/home/moto1/moto1-sl3.jpg",
+		"img/home/moto1/moto1-sl4.jpg",
+		"img/home/moto1/moto1-sl5.jpg",
+	];
+	var moto2 = [
+		"img/home/moto2.jpg",
+		"img/home/moto2/moto2-sl1.jpg",
+		"img/home/moto2/moto2-sl2.jpg",
+		"img/home/moto2/moto2-sl3.jpg",
+		"img/home/moto2/moto2-sl4.jpg",
+		"img/home/moto2/moto2-sl5.jpg",
+	];
+	var moto3 = [
+		"img/home/moto3.jpg",
+		"img/home/moto3/moto3-sl1.jpg",
+		"img/home/moto3/moto3-sl2.jpg",
+		"img/home/moto3/moto3-sl3.jpg",
+		"img/home/moto3/moto3-sl4.jpg",
+		"img/home/moto3/moto3-sl5.jpg",
+	];
+	var moto4 = [
+		"img/home/moto4.jpg",
+		"img/home/moto4/moto4-sl1.jpg",
+		"img/home/moto4/moto4-sl2.jpg",
+		"img/home/moto4/moto4-sl3.jpg",
+		"img/home/moto4/moto4-sl4.jpg",
+		"img/home/moto4/moto4-sl5.jpg",
+	];
+	var moto5 = [
+		"img/home/moto5.jpg",
+		"img/home/moto5/moto5-sl1.jpg",
+		"img/home/moto5/moto5-sl2.jpg",
+		"img/home/moto5/moto5-sl3.jpg",
+		"img/home/moto5/moto5-sl4.jpg",
+		"img/home/moto5/moto5-sl5.jpg",
+	];
+	
+	
+	function openInfo(val){
+		popupid = val
+		document.getElementById("popupname").innerHTML = "NAME";
+		document.getElementById('popupimage').src = "img/home/default.jpg";
+		document.getElementById('popupslideshowchange1').src = "img/home/default.jpg";
+		document.getElementById('popupslideshowchange2').src = "img/home/default.jpg";
+		document.getElementById('popupslideshowchange3').src = "img/home/default.jpg";
+		document.getElementById('popupslideshowchange4').src = "img/home/default.jpg";
+		document.getElementById('popupslideshowchange5').src = "img/home/default.jpg";
+		document.getElementById('popupslideshowchange6').src = "img/home/default.jpg";
+		document.getElementById("popupdesc").innerHTML = "[Insert Description Here]";
+		if (popupid == "bike1") {
+			document.getElementById("popupname").innerHTML = "Scott Speedster S30";
+			document.getElementById('popupimage').src = bike1[0];
+			document.getElementById('popupslideshowchange1').src = bike1[0];
+			document.getElementById('popupslideshowchange2').src = bike1[1];
+			document.getElementById('popupslideshowchange3').src = bike1[2];
+			document.getElementById('popupslideshowchange4').src = bike1[3];
+			document.getElementById('popupslideshowchange5').src = bike1[4];
+			document.getElementById('popupslideshowchange6').src = bike1[5];
+			document.getElementById("popupcost").innerHTML = "£949";
+			document.getElementById("popupcost").value = "949";
+			document.getElementById("popupdesc").innerHTML = "New: A brand-new, unused, unopened and undamaged item in original retail packaging (where packaging is applicable). If the item comes direct from a manufacturer, it may be delivered in non-retail packaging, such as a plain or unprinted box or plastic bag. See the seller's listing for full details.";
+		} else if (popupid == "bike2"){
+			document.getElementById("popupname").innerHTML = "Boardman Team Carbon";
+			document.getElementById('popupimage').src = bike2[0];
+			document.getElementById('popupslideshowchange1').src = bike2[0];
+			document.getElementById('popupslideshowchange2').src = bike2[1];
+			document.getElementById('popupslideshowchange3').src = bike2[2];
+			document.getElementById('popupslideshowchange4').src = bike2[3];
+			document.getElementById('popupslideshowchange5').src = bike2[4];
+			document.getElementById('popupslideshowchange6').src = bike2[5];
+			document.getElementById("popupcost").innerHTML = "£760";
+			document.getElementById("popupcost").value = "760";
+			document.getElementById("popupdesc").innerHTML = "The frame is made from lightweight carbon. Wheels are 20 inch solid spokes with rubber anti slip tyres. It has 12 gears allowing the rider to adjust according to speed, gradient and ability. The handle bar and seat adjust to suit a range of heights.";
+		} else if (popupid == "bike3"){
+			document.getElementById("popupname").innerHTML = "Genesis Equilibrium";
+			document.getElementById('popupimage').src = bike3[0];
+			document.getElementById('popupslideshowchange1').src = bike3[0];
+			document.getElementById('popupslideshowchange2').src = bike3[1];
+			document.getElementById('popupslideshowchange3').src = bike3[2];
+			document.getElementById('popupslideshowchange4').src = bike3[3];
+			document.getElementById('popupslideshowchange5').src = bike3[4];
+			document.getElementById('popupslideshowchange6').src = bike3[5];
+			document.getElementById("popupcost").innerHTML = "£999";
+			document.getElementById("popupcost").value = "999";
+			document.getElementById("popupdesc").innerHTML = "It’s not just about carbon and aluminium when it comes to quality bikes for £1,000 or less – take the Genesis Equilibrium, for example. Not only is it a steel bike, but the classic styling will really please cycling purists. The Equilibrium is popular, long-standing model in the Genesis range and has eyelets for full mudguards and a well-honed geometry, making it a great four-season all-rounder, though it’s among the heavier bikes here.";
+		} else if (popupid == "boat1"){
+			document.getElementById("popupname").innerHTML = "Speedwave II";
+			document.getElementById('popupimage').src = boat1[0];
+			document.getElementById('popupslideshowchange1').src = boat1[0];
+			document.getElementById('popupslideshowchange2').src = boat1[1];
+			document.getElementById('popupslideshowchange3').src = boat1[2];
+			document.getElementById('popupslideshowchange4').src = boat1[3];
+			document.getElementById('popupslideshowchange5').src = boat1[4];
+			document.getElementById('popupslideshowchange6').src = boat1[5];
+			document.getElementById("popupcost").innerHTML = "£25,995";
+			document.getElementById("popupcost").value = "25995";
+			document.getElementById("popupdesc").innerHTML = "Made from poly carbon this vessel is sturdy and tough keeping you safe from all weather fronts. The boat is good for open waters as well as lakes and river use. Can comfortably hold up to 6 people with an outside space for sun bathing and a seating area inside. Can reach 60mph in 5 seconds with safety cut off switch as standard.";
+		} else if (popupid == "boat2"){
+			document.getElementById("popupname").innerHTML = "Glaston Wayfarer";
+			document.getElementById('popupimage').src = boat2[0];
+			document.getElementById('popupslideshowchange1').src = boat2[0];
+			document.getElementById('popupslideshowchange2').src = boat2[1];
+			document.getElementById('popupslideshowchange3').src = boat2[2];
+			document.getElementById('popupslideshowchange4').src = boat2[3];
+			document.getElementById('popupslideshowchange5').src = boat2[4];
+			document.getElementById('popupslideshowchange6').src = boat2[5];
+			document.getElementById("popupcost").innerHTML = "£43,000";
+			document.getElementById("popupcost").value = "43000";
+			document.getElementById("popupdesc").innerHTML = "This classic looking canal boat is fitted with modern technology and facilities. Featuring 2 separate bedrooms and an internal bathroom including solar powered shower and flushing toilet. The galley kitchen includes solar powered running water, electric cooker and grill. Suitable for canals and slow moving rivers only. Top speed of 15 mph.";
+		} else if (popupid == "boat3"){
+			document.getElementById("popupname").innerHTML = "West Wight Potter";
+			document.getElementById('popupimage').src = boat3[0];
+			document.getElementById('popupslideshowchange1').src = boat3[0];
+			document.getElementById('popupslideshowchange2').src = boat3[1];
+			document.getElementById('popupslideshowchange3').src = boat3[2];
+			document.getElementById('popupslideshowchange4').src = boat3[3];
+			document.getElementById('popupslideshowchange5').src = boat3[4];
+			document.getElementById('popupslideshowchange6').src = boat3[5];
+			document.getElementById("popupcost").innerHTML = "£83,000";
+			document.getElementById("popupcost").value = "83000";
+			document.getElementById("popupdesc").innerHTML = "Over 2,600 of these attractive compact cruisers currently sail all over the world. Continuously improved over her long history, the Potter 15 has achieved a noteworthy record of sailing successes, including sailing single-handed from Seattle to Ketchikan and from England to Sweden across the North Atlantic.";
+		} else if (popupid == "boat4"){
+			document.getElementById("popupname").innerHTML = "Roxane Super Yacht";
+			document.getElementById('popupimage').src = boat4[0];
+			document.getElementById('popupslideshowchange1').src = boat4[0];
+			document.getElementById('popupslideshowchange2').src = boat4[1];
+			document.getElementById('popupslideshowchange3').src = boat4[2];
+			document.getElementById('popupslideshowchange4').src = boat4[3];
+			document.getElementById('popupslideshowchange5').src = boat4[4];
+			document.getElementById('popupslideshowchange6').src = boat4[5];
+			document.getElementById("popupcost").innerHTML = "£7.8 million";
+			document.getElementById("popupcost").value = "7800000";
+			document.getElementById("popupdesc").innerHTML = "This top of the range yacht is designed to give a sailing experience second to none. With its built in stabilisers this vessel is the perfect choice for both channel crossing and island cruising. Housing 4 ensuite double bedrooms and a fully equipped professional kitchen this is truly the yacht of choice for those looking for a luxurious means of travel.";
+		} else if (popupid == "moto1"){
+			document.getElementById("popupname").innerHTML = "Sportster Iron 883";
+			document.getElementById('popupimage').src = moto1[0];
+			document.getElementById('popupslideshowchange1').src = moto1[0];
+			document.getElementById('popupslideshowchange2').src = moto1[1];
+			document.getElementById('popupslideshowchange3').src = moto1[2];
+			document.getElementById('popupslideshowchange4').src = moto1[3];
+			document.getElementById('popupslideshowchange5').src = moto1[4];
+			document.getElementById('popupslideshowchange6').src = moto1[5];
+			document.getElementById("popupcost").innerHTML = "£7,795";
+			document.getElementById("popupcost").value = "7795";
+			document.getElementById("popupdesc").innerHTML = "You’re looking at a pioneer of raw, blacked-out, stripped-down custom style. In the years since its introduction, it has only gotten better. Fine-tuned suspension. Tuck and roll seat. Black cast aluminum wheels with machined highlights. And blacked-out surfaces from fender to fender. You get everything you need. And nothing you don’t.";
+		} else if (popupid == "moto2"){
+			document.getElementById("popupname").innerHTML = "Suzuki Hayabusa";
+			document.getElementById('popupimage').src = moto2[0];
+			document.getElementById('popupslideshowchange1').src = moto2[0];
+			document.getElementById('popupslideshowchange2').src = moto2[1];
+			document.getElementById('popupslideshowchange3').src = moto2[2];
+			document.getElementById('popupslideshowchange4').src = moto2[3];
+			document.getElementById('popupslideshowchange5').src = moto2[4];
+			document.getElementById('popupslideshowchange6').src = moto2[5];
+			document.getElementById("popupcost").innerHTML = "£12,499";
+			document.getElementById("popupcost").value = "12499";
+			document.getElementById("popupdesc").innerHTML = "Many riders have found that the Hayabusa lends itself well to any number of legitimate functional purposes, to include competitive motorsports. The Hayabusa has been used in sanctioned closed course road racing, drag racing, and top speed competition.";
+		} else if (popupid == "moto3"){
+			document.getElementById("popupname").innerHTML = "Yamaha YZ250F";
+			document.getElementById('popupimage').src = moto3[0];
+			document.getElementById('popupslideshowchange1').src = moto3[0];
+			document.getElementById('popupslideshowchange2').src = moto3[1];
+			document.getElementById('popupslideshowchange3').src = moto3[2];
+			document.getElementById('popupslideshowchange4').src = moto3[3];
+			document.getElementById('popupslideshowchange5').src = moto3[4];
+			document.getElementById('popupslideshowchange6').src = moto3[5];
+			document.getElementById("popupcost").innerHTML = "£7,699";
+			document.getElementById("popupcost").value = "7699";
+			document.getElementById("popupdesc").innerHTML = "A liquid-cooled, DOHC 4-valve, fuel-injected engine with forward-positioned downdraft intake delivers class leading engine power, updated for 2017 to further improve top-end power. This engine design allows for unmatched mass centralization, concentrating the motorcycle’s key components—engine, fuel tank and exhaust system—toward the center of the motorcycle achieving light and nimble handling performance.";
+		} else if (popupid == "moto4"){
+			document.getElementById("popupname").innerHTML = "Dodge Tomohawk";
+			document.getElementById('popupimage').src = moto4[0];
+			document.getElementById('popupslideshowchange1').src = moto4[0];
+			document.getElementById('popupslideshowchange2').src = moto4[1];
+			document.getElementById('popupslideshowchange3').src = moto4[2];
+			document.getElementById('popupslideshowchange4').src = moto4[3];
+			document.getElementById('popupslideshowchange5').src = moto4[4];
+			document.getElementById('popupslideshowchange6').src = moto4[5];
+			document.getElementById("popupcost").innerHTML = "£11,442";
+			document.getElementById("popupcost").value = "11442";
+			document.getElementById("popupdesc").innerHTML = "The Dodge Tomahawk was a non–street legal concept vehicle introduced by Dodge at the 2003 North American International Auto Show. The Tomahawk attracted significant press and industry attention for its striking design, its use of a large-capacity 10-cylinder automobile engine, and its four close-coupled wheels, which gave a motorcycle-like appearance, and fueled debate on whether it was or was not actually a motorcycle.";
+		} else if (popupid == "moto5"){
+			document.getElementById("popupname").innerHTML = "Peugeot Metropolis";
+			document.getElementById('popupimage').src = moto5[0];
+			document.getElementById('popupslideshowchange1').src = moto5[0];
+			document.getElementById('popupslideshowchange2').src = moto5[1];
+			document.getElementById('popupslideshowchange3').src = moto5[2];
+			document.getElementById('popupslideshowchange4').src = moto5[3];
+			document.getElementById('popupslideshowchange5').src = moto5[4];
+			document.getElementById('popupslideshowchange6').src = moto5[5];
+			document.getElementById("popupcost").innerHTML = "£12,923";
+			document.getElementById("popupcost").value = "12923";
+			document.getElementById("popupdesc").innerHTML = "A new Peugeot PCP promotion has just been launched, offering customers the opportunity to benefit from 9.9% APR Representative on any Peugeot Metropolis 400 using Personal Contract Purchase (PCP). PCP offers you affordable monthly repayments***, which could mean you could ride the Peugeot you’ve always dreamed about. With no deposit required as well, what’s stopping you?";
+		}
+		document.body.addEventListener("keydown", onKeyPressBody);
+	}
+	
+	function onKeyPressBody(event){
+		if (event.key == "Escape"){
+			document.getElementById('lightWrapper').style.display='none';
+			document.getElementById('fade').style.display='none';
+		}
+	}
+
+	function slideshowchange(slideshowval){
+		slideshowid = slideshowval
+		var slide = 'popupslideshowchange'.concat(slideshowid)
+		document.getElementById('popupimage').src = document.getElementById(slide).src;
+	}
+		
+	//create  a variable to hold how many items there are in total and a array to hold all the  products in the cart
+	var data = {"total":0,"rows":[]};
+	
+	window.addEventListener("load",function(){
+		//When the page loads check if there is a session 
+		if(sessionStorage && sessionStorage.getItem('cart')){
+			data = JSON.parse(sessionStorage.getItem( 'cart' ));
+		}
+	})
+
+	//Adding an object to the basket
+	function cartAdd(name,price,cost,customise,image){
+		//First an object is created to hold the data
+		var product = {};
+		product.Name = name;
+		product.Price = price;
+		product.Cost = cost;
+		product.Custom = customise;
+		product.Image = image;
+		//Number of items in data is updated
+		data.total += 1;
+		data.rows.push({product});
+		//Basket backed up
+		sessionStorage.setItem('cart',JSON.stringify(data));
+		alert(name + " with the " + customise + " style, has been added to the basket.")
+	}
+	
+	function addToCart(){
+		var name = document.getElementById("popupname").innerHTML;
+		var pric = document.getElementById("popupcost").innerHTML;
+		var cost = document.getElementById("popupcost").value;
+		var cust = document.getElementById("popup_customise").value;
+		var imag = document.getElementById('popupslideshowchange1').src;
+		cartAdd(name,pric,parseFloat(cost),cust,imag);
+	}
+	
+	</script>
+
+</body>

@@ -1,0 +1,19 @@
+a {
+	text-decoration:none;
+}
+	
+a:visited {
+	color: BLUE;
+}
+	
+a:hover {
+	color: ORANGE;
+}
+	
+.li {
+	display:inline;
+}
+	
+#nav{
+	font-size:1.3em;
+}

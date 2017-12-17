@@ -1,0 +1,22 @@
+#footercontainer{
+	padding:0%;
+	margin:0%;
+}
+.footerrow{
+	padding:0%;
+	margin:0%;
+	text-align:center;
+	margin-left:15%;
+	margin-right:15%;
+	width:70%;
+}
+.footer-nav{
+	padding-right:15px;
+	padding-left:15px;
+	text-decoration: none;
+	display:inline;
+}
+.footericons{
+	padding-right:5px;
+	padding-left:5px;
+}

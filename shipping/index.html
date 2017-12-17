@@ -1,0 +1,279 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<title>BestBefore Shipping</title>
+	
+	<meta charset="utf-8"/>
+	<link rel="stylesheet" type="text/css" href="../css/master.css">
+	<link rel="stylesheet" type="text/css" href="../css/navigation.css">
+	<link rel="stylesheet" type="text/css" href="../css/footer.css">
+
+	<style>
+	
+	#left-panel{
+		width:30%;
+		height:85%;
+		float:left;
+		background-color:GRAY;
+	}
+	
+	#leftpanel-wrapper{
+		padding-top:2%;
+		padding-right:2%;
+		padding-left:2%;
+		margin:0;
+		margin-right:5%;
+		margin-left:5%;
+		margin-top:5%;
+		margin-bottom:5%;
+		height:92%;
+		width:86%;
+		background-color:GAINSBORO;
+		overflow-y:scroll;
+	}
+	
+	#right-panel{
+		width:65%;
+		height:85%;
+		float:right;
+		background-color:GRAY;
+	}
+	
+	#rightpanel-wrapper{
+		margin:0;
+		margin-top:5%;
+		margin-right:5%;
+		margin-left:5%;
+		margin-bottom:5%;
+		width:90%;
+		height:90%;
+		background-color:WHITE;
+	}
+	</style>
+</head>
+
+<body>
+	<div id="header-bar">
+		<img alt="Image Not Found" src="../img/master/logo.png" height="50" style="margin:7.5px; float:left;"/>
+	</div>
+	<div class="contents">
+		<nav>
+			<ul id="nav">
+				<li class="li">
+					<a href="../index.html">Home</a>
+				</li>
+				|
+				<li class="li">
+					<a href="../shipping/index.html">Shipping</a>
+				</li>
+				|
+				<li class="li">
+					<a href="../help/index.html">Help</a>
+				</li>
+				|
+				<li class="li">
+					<a href="../basket/index.html">Basket</a>
+				</li>
+			</ul>
+		</nav>
+		<div id="left-panel">
+			<div id="leftpanel-wrapper">
+				<p>KEY</p>
+				<p>Depending on where you require your purchases to be delivered, an aditional shipping cost is added to your order.</p>
+				<p>Europe [RED]: </p>
+				<p style="text-align:right;">+6%</p>
+				<p>Oceania [PURPLE]: </p>
+				<p style="text-align:right;">+10%</p>
+				<p>Asia [ORANGE]: </p>
+				<p style="text-align:right;">+14%</p>
+				<p>North America [LIGHT GREEN]: </p>
+				<p style="text-align:right;">+8%</p>
+				<p>South America [DARK GREEN]: </p>
+				<p style="text-align:right;">+12%</p>
+				<p>Africa [YELLOW]: </p>
+				<p style="text-align:right;">+11%</p>
+			</div>
+		</div>
+		<div id="right-panel">
+			<div id="rightpanel-wrapper">
+				<canvas></canvas>
+			</div>
+		</div>
+	</div>
+	
+	<br/>
+<!-- This is the footer of the page -->
+	<footer>
+		<div class="contents">
+			<div id="footercontainer">
+				<div class="footerrow">
+					<ul>
+						<li class="li"><img alt="Image Not Found" src="../img/master/fb-art.png" width="35" height="35" class="footericons"/></li>
+						<li class="li"><img alt="Image Not Found" src="../img/master/tw-art.png" width="35" height="35" class="footericons"/></li>
+						<li class="li"><img alt="Image Not Found" src="../img/master/bebo-art.png" width="35" height="35" class="footericons"/></li>
+						<li class="li"><img alt="Image Not Found" src="../img/master/pin-art.png" width="35" height="35" class="footericons"/></li>
+						<li class="li"><img alt="Image Not Found" src="../img/master/inst-art.png" width="35" height="35" class="footericons"/></li>
+					</ul>
+				</div>
+				<div class="footerrow">
+					<ul>
+						<li class="footer-nav"><a href="../index.html" style="text-decoration:none;">Home</a></li>
+						<li class="footer-nav"><a href="../shipping/index.html" style="text-decoration:none;">Shipping</a></li>
+						<li class="footer-nav"><a href="../help/index.html" style="text-decoration:none;">Help</a></li>
+						<li class="footer-nav"><a href="../basket/index.html" style="text-decoration:none;">Basket</a></li>
+					</ul>
+				</div>
+				<div class="footerrow">
+					<p style="font-size:0.85em;">©2016 The BestBefore, BestBefore Inc.</p>
+				</div>
+			</div>
+		</div>
+	</footer>
+	
+
+	<script>
+	
+		var canvas = document.getElementsByTagName('canvas')[0];
+		canvas.width = document.getElementById('rightpanel-wrapper').offsetWidth;
+		canvas.height = document.getElementById('rightpanel-wrapper').offsetHeight;
+
+	var gkhead = new Image;
+
+	window.onload = function(){		
+		    var ctx = canvas.getContext('2d');
+		    trackTransforms(ctx);
+		  
+    function redraw(){
+          // Clear the entire canvas
+          var p1 = ctx.transformedPoint(0,0);
+          var p2 = ctx.transformedPoint(canvas.width,canvas.height);
+          ctx.clearRect(p1.x,p1.y,p2.x-p1.x,p2.y-p1.y);
+
+          ctx.save();
+          ctx.setTransform(1,0,0,1,0,0);
+          ctx.clearRect(0,0,canvas.width,canvas.height);
+          ctx.restore();
+
+          ctx.drawImage(gkhead,0,0);
+
+        }
+        redraw();
+      //Add an event listener so that when the mouse is held down...
+      canvas.addEventListener('mousedown',function(evt){
+          //Find mouse location on image for X and Y...
+          lastX = evt.offsetX || (evt.pageX - canvas.offsetLeft);
+          lastY = evt.offsetY || (evt.pageY - canvas.offsetTop);
+          //Begin dragging from that point...
+          dragStart = ctx.transformedPoint(lastX,lastY);
+          dragged = false;
+      },false);
+
+    
+      //Add an event listener so that when the mouse is held down...
+      canvas.addEventListener('mousemove',function(evt){
+          //Find mouse location on image for X and Y...
+          lastX = evt.offsetX || (evt.pageX - canvas.offsetLeft);
+          lastY = evt.offsetY || (evt.pageY - canvas.offsetTop);
+          dragged = true;
+          if (dragStart){
+            var pt = ctx.transformedPoint(lastX,lastY);
+            ctx.translate(pt.x-dragStart.x,pt.y-dragStart.y);
+            redraw();
+                }
+      },false);
+
+      canvas.addEventListener('mouseup',function(evt){
+          dragStart = null;
+          if (!dragged) zoom(evt.shiftKey ? -1 : 1 );
+      },false);
+
+      var scaleFactor = 1.1;
+
+      var zoom = function(clicks){
+          var pt = ctx.transformedPoint(lastX,lastY);
+          ctx.translate(pt.x,pt.y);
+          var factor = Math.pow(scaleFactor,clicks);
+          ctx.scale(factor,factor);
+          ctx.translate(-pt.x,-pt.y);
+          redraw();
+      }
+
+      var handleScroll = function(evt){
+          var delta = evt.wheelDelta ? evt.wheelDelta/40 : evt.detail ? -evt.detail : 0;
+          if (delta) zoom(delta);
+          return evt.preventDefault() && false;
+      };
+    
+      canvas.addEventListener('DOMMouseScroll',handleScroll,false);
+      canvas.addEventListener('mousewheel',handleScroll,false);
+	};
+
+	gkhead.src = '../img/shipping/shippingLocations.png';
+	
+	// Adds ctx.getTransform() - returns an SVGMatrix
+	// Adds ctx.transformedPoint(x,y) - returns an SVGPoint
+	function trackTransforms(ctx){
+      var svg = document.createElementNS("http://www.w3.org/2000/svg",'svg');
+      var xform = svg.createSVGMatrix();
+      ctx.getTransform = function(){ return xform; };
+
+      var savedTransforms = [];
+      var save = ctx.save;
+      ctx.save = function(){
+          savedTransforms.push(xform.translate(0,0));
+          return save.call(ctx);
+      };
+    
+      var restore = ctx.restore;
+      ctx.restore = function(){
+        xform = savedTransforms.pop();
+        return restore.call(ctx);
+		      };
+
+      var scale = ctx.scale;
+      ctx.scale = function(sx,sy){
+        xform = xform.scaleNonUniform(sx,sy);
+        return scale.call(ctx,sx,sy);
+		      };
+    
+      var rotate = ctx.rotate;
+      ctx.rotate = function(radians){
+          xform = xform.rotate(radians*180/Math.PI);
+          return rotate.call(ctx,radians);
+      };
+    
+      var translate = ctx.translate;
+      ctx.translate = function(dx,dy){
+          xform = xform.translate(dx,dy);
+          return translate.call(ctx,dx,dy);
+      };
+    
+      var transform = ctx.transform;
+      ctx.transform = function(a,b,c,d,e,f){
+          var m2 = svg.createSVGMatrix();
+          m2.a=a; m2.b=b; m2.c=c; m2.d=d; m2.e=e; m2.f=f;
+          xform = xform.multiply(m2);
+          return transform.call(ctx,a,b,c,d,e,f);
+      };
+    
+      var setTransform = ctx.setTransform;
+      ctx.setTransform = function(a,b,c,d,e,f){
+          xform.a = a;
+          xform.b = b;
+          xform.c = c;
+          xform.d = d;
+          xform.e = e;
+          xform.f = f;
+          return setTransform.call(ctx,a,b,c,d,e,f);
+      };
+    
+      var pt  = svg.createSVGPoint();
+      ctx.transformedPoint = function(x,y){
+          pt.x=x; pt.y=y;
+          return pt.matrixTransform(xform.inverse());
+      }
+	}
+	
+	</script>
+	
+</body>

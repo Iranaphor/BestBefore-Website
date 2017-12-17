@@ -1,0 +1,359 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<title>BestBefore Basket</title>
+	
+	<meta charset="utf-8"/>
+	<link rel="stylesheet" type="text/css" href="../css/master.css">
+	<link rel="stylesheet" type="text/css" href="../css/navigation.css">
+	<link rel="stylesheet" type="text/css" href="../css/footer.css">
+	
+	<link rel="stylesheet" type="text/css" href="../css/popup.css">
+	
+	<style>
+	
+	li {
+		display:inline;
+	}
+	
+	#left-panel{
+		height:80%;
+		overflow-y:scroll;
+		width:70%;
+		float:left;
+	}
+	
+	#leftpanel-wrapper{
+		padding-top:2%;
+		margin:0;
+		margin-right:5%;
+		margin-left:5%;
+	}
+	
+	#right-panel{
+		width:30%;
+		height:auto;
+		float:right;
+		background-color:GRAY;
+	}
+	
+	.rightpanel-wrapper{
+		margin:0;
+		margin-top:2%;
+		margin-right:2%;
+		margin-left:2%;
+		margin-bottom:4%;
+		overflow:hidden;
+		padding-top:5%;
+		padding-right:2%;
+		padding-left:2%;
+		padding-bottom:5%;
+		background-color:GAINSBORO;
+	}
+
+	.summaryfloatcenter{
+		height:2%;
+		width:100%;
+	}
+
+	.summaryfloatright{
+		height:60px;
+		width:75%;
+		float:right;
+		text-align:right;
+	}
+
+	.summaryfloatleft{
+		height:60px;
+		width:75%;
+		float:left;
+		text-align:left;
+	}
+
+	#shippingType{
+		height:1.875em;
+		width:100%;
+	}
+
+	.basketobject{
+		margin-top:5%;
+		margin-left:2%;
+		margin-right:2%;
+		margin-bottom:5%;
+		width:96%;
+	}
+
+	table {
+		border-width: 0px;
+		border-spacing: 1px;
+		border-style: inset;
+		border-color: gray;
+		border-collapse: collapse;
+		background-color: white;
+	}
+	th {
+		border-width: 3px;
+		padding: 5px;
+		border-style: outset;
+		border-color: black;
+		background-color: white;
+		-moz-border-radius: ;
+	}
+	td {
+		text-align:center;
+		border-width: 3px;
+		padding: 5px;
+		border-style: outset;
+		border-color: black;
+		background-color: white;
+		-moz-border-radius: ;
+	}
+
+	</style>
+</head>
+
+<body>
+	<div id="header-bar">
+		<img alt="Image Not Found" src="../img/master/logo.png" height="50" style="margin:7.5px; float:left;"/>
+	</div>	
+	<div class="contents">
+		<nav>
+			<ul id="nav">
+				<li class="li">
+					<a href="../index.html">Home</a>
+				</li>
+				|
+				<li class="li">
+					<a href="../shipping/index.html">Shipping</a>
+				</li>
+				|
+				<li class="li">
+					<a href="../help/index.html">Help</a>
+				</li>
+				|
+				<li class="li">
+					<a href="../basket/index.html">Basket</a>
+				</li>
+			</ul>
+		</nav>
+		<div id="left-panel">
+			<div id="leftpanel-wrapper">
+			</div>
+		</div>
+		<div id="right-panel">
+			<div class="rightpanel-wrapper">
+				<div id="summaryfloatcenter">
+					<p>Order Summary</p>
+				</div>
+				<div class="summaryfloatleft">
+					<p>Total Item Cost</p>
+				</div>
+				<div class="summaryfloatright">
+					<p><input type="text" name="itemCost" readonly style="width:100%;" placeholder="Item Cost" id="itemCost"></p>
+				</div>
+				<div class="summaryfloatleft">
+					<p>Shipping Location</p>
+				</div>
+				<div class="summaryfloatcenter">
+					<select id="shippingType" onChange="leaveChange()">
+						<option value="6">Europe</option>
+						<option value="10">Oceania</option>
+						<option value="14">Asia</option>
+						<option value="8">North America</option>
+						<option value="12">South America</option>
+						<option value="11">Africa</option>
+					</select>
+				</div>
+				<div>
+					<p style="width:25%;display:inline;" id="shippingPercent">+6%</p><p style="display:inline;"><input type="text" name="shippingCost" readonly style="width:75%;float:right" placeholder="Shipping Cost" id="shippingCost"></p>
+				</div>
+				<div class="summaryfloatleft">
+					<p>Total Cost</p>
+				</div>
+				<div class="summaryfloatright">
+					<p><input type="text" name="totalCost" readonly style="width:100%;" placeholder="Total Cost" id="totalCost"/></p>
+				</div>
+			</div>
+			<div class="rightpanel-wrapper">
+				<div class="summaryfloatcenter">
+					<button type="button" onclick="document.getElementById('lightWrapper').style.display='block';document.getElementById('fade').style.display='block'" style="width:100%;height:30px;">Checkout</button>
+				</div>
+			</div>
+		</div>
+	</div>
+	<br/>
+<!-- This is the footer of the page -->
+	<footer>
+		<div class="contents">
+			<div id="footercontainer">
+				<div class="footerrow">
+					<ul>
+						<li class="li"><img alt="Image Not Found" src="../img/master/fb-art.png" width="35" height="35" class="footericons"/></li>
+						<li class="li"><img alt="Image Not Found" src="../img/master/tw-art.png" width="35" height="35" class="footericons"/></li>
+						<li class="li"><img alt="Image Not Found" src="../img/master/bebo-art.png" width="35" height="35" class="footericons"/></li>
+						<li class="li"><img alt="Image Not Found" src="../img/master/pin-art.png" width="35" height="35" class="footericons"/></li>
+						<li class="li"><img alt="Image Not Found" src="../img/master/inst-art.png" width="35" height="35" class="footericons"/></li>
+					</ul>
+				</div>
+				<div class="footerrow">
+					<ul>
+						<li class="footer-nav"><a href="../index.html" style="text-decoration:none;">Home</a></li>
+						<li class="footer-nav"><a href="../shipping/index.html" style="text-decoration:none;">Shipping</a></li>
+						<li class="footer-nav"><a href="../help/index.html" style="text-decoration:none;">Help</a></li>
+						<li class="footer-nav"><a href="../basket/index.html" style="text-decoration:none;">Basket</a></li>
+					</ul>
+				</div>
+				<div class="footerrow">
+					<p style="font-size:0.85em;">©2016 The BestBefore, BestBefore Inc.</p>
+				</div>
+			</div>
+		</div>
+	</footer>
+	
+	
+<!-- This is the popup section -->
+	<div id="lightWrapper" class="white_content">
+		<div style="popupheaderbar">
+			<img alt="Image Not Found" src="../img/home/close.png" width="5%" style="margin:7.5px;float:right;" onclick="document.getElementById('lightWrapper').style.display='none'; document.getElementById('fade').style.display='none'"/>
+		</div>
+		<div id="popupwrapper">
+			<div id="popupleftbanner" style="width:50%	">
+				<div class="checkoutinput">
+					<p>Billing Information</p>
+					<p><input type="text" style="width:94%;margin-left:2%;margin-right:2%;" placeholder="First Name" id="popupFName"/></p>
+					<p><input type="text" style="width:94%;margin-left:2%;margin-right:2%;" placeholder="Second Name" id="popupSName"/></p>
+					<br/>
+					<p><input type="text" style="width:94%;margin-left:2%;margin-right:2%;" placeholder="Country" id="popupCountry"/></p>
+					<p><input type="text" style="width:94%;margin-left:2%;margin-right:2%;" placeholder="State/County" id="popupCounty"/></p>
+					<p><input type="text" style="width:94%;margin-left:2%;margin-right:2%;" placeholder="Street Address" id="popupSAddress"/></p>
+					<p><input type="text" style="width:94%;margin-left:2%;margin-right:2%;" placeholder="Street Address 2" id="popupSAddress2"/></p>
+					<p><input type="text" style="width:94%;margin-left:2%;margin-right:2%;" placeholder="ZIP/Postcode" id="popupPCode"/></p>
+					<br/>
+					<p><input type="text" style="width:94%;margin-left:2%;margin-right:2%;" placeholder="Phone Number" id="popupPNumber"/></p>
+					<p><input type="text" style="width:94%;margin-left:2%;margin-right:2%;" placeholder="Email Address" id="popupEmail"/></p>
+				</div>
+			</div>
+			<div id="popuprightbanner" style="width:50%">
+				<div class="checkoutinput">
+					<p>Billing and Delivery Information</p>
+					<p><input type="text" style="width:94%;margin-left:2%;margin-right:2%;" placeholder="Cardholder Name" id="popupCName"/></p>
+					<p><input type="text" style="width:94%;margin-left:2%;margin-right:2%;" placeholder="Card Number" id="popupCNumber"/></p>
+					<p><input type="text" style="width:94%;margin-left:2%;margin-right:2%;" placeholder="SRC Number" id="popupSRCNumber"/></p>
+					<p> Delivery to Billing Address: <button type="button" onclick="copyBilling()" style="width:40px;height:20px;float:right;margin-right:2%;">Yes</button></p>
+					<p><input type="text" style="width:94%;margin-left:2%;margin-right:2%;" placeholder="Country" id="popupBCountry"/></p>
+					<p><input type="text" style="width:94%;margin-left:2%;margin-right:2%;" placeholder="State/County" id="popupBCounty"/></p>
+					<p><input type="text" style="width:94%;margin-left:2%;margin-right:2%;" placeholder="Street Address" id="popupBSAddress"/></p>
+					<p><input type="text" style="width:94%;margin-left:2%;margin-right:2%;" placeholder="Street Address 2" id="popupBSAddress2"/></p>
+					<p><input type="text" style="width:94%;margin-left:2%;margin-right:2%;" placeholder="ZIP/Postcode" id="popupBPCode"/></p>
+					<button type="button" onclick="document.getElementById('lightWrapper2').style.display='block'; document.getElementById('fade2').style.display='block';document.getElementById('lightWrapper').style.display='none'; document.getElementById('fade').style.display='none'" style="width:100%;height:30px;float:bottom;">Purchase</button>
+				</div>	
+			</div>
+		</div>
+	</div>
+	<div id="fade" class="black_overlay" onclick="document.getElementById('lightWrapper').style.display='none'; document.getElementById('fade').style.display='none'"></div>
+
+	
+	<!-- This is the popup section -->
+	<div id="lightWrapper2" class="white_content2">
+		<div id="popupwrapper2">
+			<p>Signature Required: <button type="button" onclick="alert('Your order has been submitted. You will recieve an email reply shortly.')" style="width:30%;height:25px;float:right;">Submit</button></p>
+		</div>
+		<div id="popupwrapper3">
+			<canvas id="canvas" style="width:100%;height:100%;"></canvas>
+		</div>
+	</div>
+	<div id="fade2" class="black_overlay2" onclick="document.getElementById('lightWrapper').style.display='block';document.getElementById('fade').style.display='block';document.getElementById('lightWrapper2').style.display='none'; document.getElementById('fade2').style.display='none'"></div>
+
+	
+	
+	<script>
+		var data = {"total":0,"rows":[]};
+		var itemTotal = 0;
+		var shippingTotal = 0;
+		var costTotal = 0;
+
+		window.addEventListener("load",function(){
+			if(sessionStorage && sessionStorage.getItem('cart')){
+				data = JSON.parse(sessionStorage.getItem( 'cart' ));
+				for (var i = 0; i <= data.total -1; i++) {
+					var basket = document.getElementById("leftpanel-wrapper");
+						var basketDiv = document.createElement("div");				//Creates a div element
+						basketDiv.className = "basketobject";						//Gives a style class to the div
+							var basketTable1 = document.createElement("table");			//Creates a div element
+								basketTable1.width = "100%";							//Gives the table a width
+								var basketTable1TBody = document.createElement("tbody");	//Creates a div element
+									var basketRow1 = document.createElement("tr");				//Creates a table row
+										var basketRow1Td1 = document.createElement("td");			//Creates a table cell
+											basketRow1Td1.rowSpan = "2";								//
+											var basketIMG = document.createElement("img");				//Creates an image
+												basketIMG.src = data.rows[i].product.Image;					//Gives the image an src
+												basketIMG.style.width = "100%";							//Gives the image a width
+											basketRow1Td1.appendChild(basketIMG);						//Adds the element to the parent element
+										basketRow1.appendChild(basketRow1Td1);						//Adds the element to the parent element
+
+										var basketRow1Td2 = document.createElement("td");			//Creates a table cell
+											basketRow1Td2.colSpan = "2";								//
+											basketRow1Td2.width = "80%";								//
+											var basketName = document.createElement("p");				//Creates an image
+												basketName.innerHTML = data.rows[i].product.Name;			//
+											basketRow1Td2.appendChild(basketName);						//Adds the element to the parent element
+										basketRow1.appendChild(basketRow1Td2);						//Adds the element to the parent element
+									basketTable1TBody.appendChild(basketRow1);							//Adds the element to the parent element
+
+									var basketRow2 = document.createElement("tr");				//Creates a table row
+										var basketRow2Td1 = document.createElement("td");			//Creates a table cell
+											basketRow2Td1.width = "40%";								//
+											var basketCust = document.createElement("p");				//
+												basketCust.innerHTML = data.rows[i].product.Custom;			//
+											basketRow2Td1.appendChild(basketCust);						//Adds the element to the parent element
+										basketRow2.appendChild(basketRow2Td1);						//Adds the element to the parent element
+
+										var basketRow2Td2 = document.createElement("td");			//Creates a table cell
+											basketRow2Td2.width = "40%";								//
+											var basketCost = document.createElement("p");				//Creates an image
+												basketCost.innerHTML = data.rows[i].product.Price;			//
+												itemTotal = itemTotal + data.rows[i].product.Cost;
+											basketRow2Td2.appendChild(basketCost);						//Adds the element to the parent element
+										basketRow2.appendChild(basketRow2Td2);						//Adds the element to the parent element
+									basketTable1TBody.appendChild(basketRow2);
+								basketTable1.appendChild(basketTable1TBody)
+							basketDiv.appendChild(basketTable1);							//Adds the element to the parent element
+						basket.appendChild(basketDiv);								//Adds the element to the parent element
+					}
+				}
+			document.getElementById("itemCost").value = parseInt(itemTotal);
+			shippingTotal = itemTotal * (document.getElementById("shippingType").value / 100);
+			document.getElementById("shippingCost").value = parseInt(shippingTotal);
+			costTotal = itemTotal + shippingTotal;
+			document.getElementById("totalCost").value = parseInt(costTotal);
+		});
+		
+		function leaveChange() {
+			document.getElementById("shippingPercent").innerHTML = "+" + parseFloat(document.getElementById("shippingType").value) + "%"
+			shippingTotal = itemTotal * (document.getElementById("shippingType").value / 100);
+			document.getElementById("shippingCost").value = parseInt(shippingTotal);
+			costTotal = itemTotal + shippingTotal;
+			document.getElementById("totalCost").value = parseInt(costTotal);
+		}
+		
+		document.body.addEventListener("keydown", onKeyPressBody);
+	
+		function onKeyPressBody(event){
+			if (event.key == "Escape"){
+				document.getElementById('lightWrapper').style.display='none';
+				document.getElementById('fade').style.display='none';
+			}
+		}
+		
+		function copyBilling(){
+			document.getElementById('popupBCountry').value = document.getElementById('popupCountry').value
+			document.getElementById('popupBCounty').value = document.getElementById('popupCounty').value
+			document.getElementById('popupBSAddress').value = document.getElementById('popupSAddress').value
+			document.getElementById('popupBSAddress2').value = document.getElementById('popupSAddress2').value
+			document.getElementById('popupBPCode').value = document.getElementById('popupPCode').value
+		}
+		
+	</script>
+	
+	<script type="text/javascript" src="../javascript/signature.js"></script>
+</body>
